@@ -1,5 +1,5 @@
 <template>
-    <div class='drawer' :class="{ show: active }" @click="$emit('closeProductDesc')"> <!-- drawer -->
+    <div class='drawer' :class="{ show: active }"> <!-- drawer -->
       <div class="close" @click="$emit('closeProductDesc')">X</div> <!-- drawer-close -->
       <div v-if="product" class="details">
         <h3>{{ product.name }}</h3>
@@ -12,8 +12,8 @@
         </div>
 
         <div class="button-container">
-          <button class="remove">Remove</button>
-          <button class="add">Add</button>
+          <button class="remove" @click.prevent="removeFromCart">Remove</button>
+          <button class="add" @click.prevent="addToCart">Add</button>
         </div>
       </div>
     </div>
@@ -23,12 +23,20 @@
 export default {
   name: "ProductDescription",
   props: ["product", 'active'],
-  computed: {
-      product_total() {
-          return 13;
+  methods: {
+      addToCart() {
+          console.log(product);
+          this.$store.commit('addToCart', this.product);
+      },
+      removeFromCart() {
+          //
       }
   },
-  
+  computed: {
+      product_total() {
+          return this.$store.getters.productQuantity(this.product);
+      }
+  }
 };
 </script>
 
