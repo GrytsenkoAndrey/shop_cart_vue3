@@ -1,3 +1,4 @@
 <template>
-<p>this is the CartView</p>
+<h2>this is the CartView</h2>
+<main></main>
 </template>

@@ -1,37 +1,52 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from '@/components/HelloWorld.vue'
+import { RouterLink, RouterView } from "vue-router";
 </script>
 
 <template>
-  <header class='text-center'>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+  <header class="text-center">
+    <img
+      alt="Vue logo"
+      class="logo"
+      src="@/assets/logo.svg"
+      width="125"
+      height="125"
+    />
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
 
       <nav>
-        <RouterLink to="/" :class="{active: $router.name === 'Home'}">Home</RouterLink>
-        <RouterLink to="/cart" :class="{active: $router.name === 'Cart'}">Cart</RouterLink>
+        <RouterLink to="/" :class="{ active: $router.name === 'Home' }"
+          >Home</RouterLink
+        >
+        <RouterLink to="/cart" :class="{ active: $router.name === 'Cart' }"
+          >Cart</RouterLink
+        >
       </nav>
     </div>
   </header>
 
-  <div class='container'>
-  <RouterView />
+  <div class="container">
+      <RouterView />
   </div>
-  
 </template>
 
 <style lang="scss">
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
 }
 
 body {
-  background-color: rgba(245, 245, 245, .7);
+  background-color: rgba(245, 245, 245, 0.7);
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 #nav {
@@ -39,7 +54,7 @@ body {
   padding: 10px;
   line-height: 30px;
   height: 30px;
-  width:100%;
+  width: 100%;
 }
 
 a {
