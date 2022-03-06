@@ -5,6 +5,7 @@
       v-for="product in items"
       :key="product.id"
       :product="product"
+      @view-product="viewProduct($event)"
     ></ProductSummaryCard>
   </main>
 </template>
@@ -21,7 +22,14 @@ export default {
   data() {
     return {
       items: items,
+      product: null
     };
   },
+  methods: {
+    viewProduct(product) {
+      this.product = product;
+      console.log(this.product);
+    }
+  }
 };
 </script>

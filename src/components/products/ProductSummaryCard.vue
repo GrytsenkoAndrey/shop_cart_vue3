@@ -4,7 +4,7 @@
 <h5 class="price">Price: $ {{ product.price }}</h5>
 <p class="description">Description: {{ description }}</p>
 <p class='text-muted'>{{ product.category }}</p>
-<button class='view-product-button' @click.prevent="$emit('view-product', product)">View</button>
+<button class='view-product-button' @click.prevent="$emit('view-product', product)">View Product</button>
 </div>
 </template>
 
