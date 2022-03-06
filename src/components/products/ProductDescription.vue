@@ -27,7 +27,8 @@ export default {
       product_total() {
           return 13;
       }
-  }
+  },
+  
 };
 </script>
 

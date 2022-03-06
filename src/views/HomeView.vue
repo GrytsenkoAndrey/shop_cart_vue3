@@ -1,7 +1,7 @@
 <template>
   <h2>Main view (component)</h2>
 
-  <ProductDescription :product="product" :active="active.product_desc"></ProductDescription>
+  <ProductDescription :product="product" :active="active.product_desc" v-on:close-product-desc='closeProduct()'></ProductDescription>
 
   <main>   
     <ProductSummaryCard
@@ -37,8 +37,11 @@ export default {
     viewProduct(product) {
       this.product = product;
       this.active.product_desc = true;
-      
+
       console.log(this.product);
+    },
+    closeProduct() {
+      this.active.product_desc = false;
     }
   }
 };
